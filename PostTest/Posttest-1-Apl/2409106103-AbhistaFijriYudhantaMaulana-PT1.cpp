@@ -18,7 +18,7 @@ int main() {
     int pilihan;
     do {
         // Menu Utama
-        cout << "\n== SISTEM HITUNG BANGUN DATAR DAN BANGUN RUANG ==\n";
+        cout << "\n-- Welkam, Punten bang dan Mbak silahkan --\n";
         cout << "1. Hitung Luas\n2. Hitung Keliling\n3. Hitung Volume\n4. Logout\nPilih: ";
         cin >> pilihan;
         
@@ -91,9 +91,44 @@ int main() {
                     cout << "Keliling Segitiga: " << a + b + c << "\n";
                 }
             } while (subPilihan != 5);
+        } else if (pilihan == 3) {
+            int subPilihan;
+            do {
+                cout << "\n== HITUNG VOLUME ==\n";
+                cout << "1. Kubus\n2. Balok\n3. Bola\n4. Kerucut\n5. Kembali\nPilih: ";
+                cin >> subPilihan;
+                if (subPilihan == 1) {
+                    double sisi;
+                    do {
+                        cout << "Masukkan sisi: "; cin >> sisi;
+                    } while (sisi < 0);
+                    cout << "Volume Kubus: " << sisi * sisi * sisi << "\n";
+                } else if (subPilihan == 2) {
+                    double p, l, t;
+                    do {
+                        cout << "Masukkan panjang: "; cin >> p;
+                        cout << "Masukkan lebar: "; cin >> l;
+                        cout << "Masukkan tinggi: "; cin >> t;
+                    } while (p < 0 || l < 0 || t < 0);
+                    cout << "Volume Balok: " << p * l * t << "\n";
+                } else if (subPilihan == 3) {
+                    double r;
+                    do {
+                        cout << "Masukkan jari-jari: "; cin >> r;
+                    } while (r < 0);
+                    cout << "Volume Bola: " << (4.0 / 3.0) * 3.14 * r * r * r << "\n";
+                } else if (subPilihan == 4) {
+                    double r, t;
+                    do {
+                        cout << "Masukkan jari-jari: "; cin >> r;
+                        cout << "Masukkan tinggi: "; cin >> t;
+                    } while (r < 0 || t < 0);
+                    cout << "Volume Kerucut: " << (1.0 / 3.0) * 3.14 * r * r * t << "\n";
+                }
+            } while (subPilihan != 5);
         }
     } while (pilihan != 4);
     
-    cout << "Logout berhasil. Terima kasih!";
+    cout << "Makaseh, nanti balek lagi yaa!!";
     return 0;
 }
